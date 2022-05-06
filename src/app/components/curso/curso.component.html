@@ -1,0 +1,37 @@
+<form class="width-form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Curso</label>
+      <input type="text" id="curso" class="form-control" id="exampleInputEmail1" name="nomeCurso" [(ngModel)]="curso.nomeCurso" placeholder="Nome do Curso">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Valor</label>
+      <input type="number" id="valor" class="form-control" id="exampleInputPassword1" name="valorCurso" [(ngModel)]="curso.valorCurso" placeholder="Valor do Curso">
+    </div>
+    <button (click)="cadastro(this.curso.nomeCurso, this.curso.valorCurso)" class="btn btn-primary">Cadastrar</button>
+</form>
+
+<div class="alert alert-success" role="alert">
+    Cadastro feito!
+</div>
+
+<div class="table-responsive-lg">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Valor</th>
+            <th class="middle-th" colspan="2" scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let curso of vetor">
+                <td>{{curso.id}}</td>
+                <td>{{curso.nomeCurso}}</td>
+                <td>R$ {{curso.valorCurso | preco}}</td>
+                <td (click)="excluir(curso.id)" class="middle-th"><button type="button" class="btn btn-outline-danger">Deletar</button></td>
+                <td (click)="alterar(curso.id)" class="middle-th"><button type="button" class="btn btn-outline-success">Atualizar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

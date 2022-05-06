@@ -1,0 +1,19 @@
+{
+  "cursos": [
+    {
+      "nomeCurso": "Game Developer Iniciante",
+      "valorCurso": 120,
+      "id": 1
+    },
+    {
+      "nomeCurso": "JavaScript",
+      "valorCurso": 90,
+      "id": 2
+    },
+    {
+      "nomeCurso": "Game Developer Advanced",
+      "valorCurso": 150,
+      "id": 4
+    }
+  ]
+}
